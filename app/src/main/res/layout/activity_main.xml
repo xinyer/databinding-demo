@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="user"
+            type="com.xinx.databind.UserBean"/>
+
+        <variable
+            name="observableUser"
+            type="com.xinx.databind.ObservableUser"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}"
+            tools:text="Name1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/name1"
+            app:layout_constraintRight_toRightOf="@+id/name1"
+            android:text="@{observableUser.name}"
+            tools:text="Name2"/>
+
+        <Button
+            android:id="@+id/btn_update_observable_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="update observable user"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
